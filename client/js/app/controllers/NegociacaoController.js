@@ -8,6 +8,9 @@ class NegociacaoController{
         this._inputValor = $('#valor');
         this._listaNegociacoes = new ListaNegociacoes();
         this._negociacoesView = new NegociacoesView($('[data-tipo=NegociacaoView]'));
+        this._mensagem = new Mensagem();
+        this._mensagemView = new MensagemView($('#mensagemView'));
+
     }
 
     adiciona(event){
@@ -15,6 +18,8 @@ class NegociacaoController{
         const negociacao = this._criaNegociacao();
         this._listaNegociacoes.adiciona(negociacao);
         this._negociacoesView.update(this._listaNegociacoes.negociacoes);
+        this._mensagem.texto = 'Negociação adicionada';
+        this._mensagemView.update(this._mensagem);
         this.limpaCampos();
     }
 

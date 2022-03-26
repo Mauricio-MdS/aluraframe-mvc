@@ -1,14 +1,8 @@
-class NegociacoesView{
+"use strict"
 
-    constructor(elemento){
+class NegociacoesView extends View{
 
-        this._elemento = elemento;
-
-    }
-
-
-    // TO DO HERE
-    _template(model){
+    template(model){
         return `
             <thead>
                 <tr>
@@ -33,10 +27,6 @@ class NegociacoesView{
                     <td>${model.reduce( (total, item) => total += item.volume, 0)}</td>
                 </tr>
             </tfooter>`;   
-    }
-
-    update(model){
-        this._elemento.innerHTML = this._template(model);
     }
 
 }
