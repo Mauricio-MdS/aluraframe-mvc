@@ -10,7 +10,7 @@ class NegociacaoController{
 
     adiciona(event){
         event.preventDefault();
-        const negociacao = new Negociacao (new Date(this._inputData.value.split('-')), this._inputQuantidade.value, this._inputValor.value);
+        const negociacao = new Negociacao (DateHelper.textoParaData(this._inputData.value), this._inputQuantidade.value, this._inputValor.value);
         this.limpaCampos();
     }
 
